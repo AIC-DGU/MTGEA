@@ -1,0 +1,51 @@
+# command line: main.py recognition -c config/mtgea/dguha/test.yaml --weights /home/aimaster/lab_storage/final_2-stream/MTGEA/saved_best_model/mtgea_model(with_ahc).pt --phase freezing_test
+
+base_lr: 0.01
+batch_size: 256
+config: config/mtgea/dguha/test.yaml
+debug: false
+device:
+- 3
+eval_interval: 5
+feeder: feeder.feeder.Feeder
+ignore_weights: []
+log_interval: 100
+model: net.mtgea.MTGEA
+model_args:
+    base_model: net.st_gcn.Model
+    dropout: 0.5
+    edge_importance_weighting: true
+    graph_args:
+        layout: ntu-rgb+d
+        strategy: spatial
+    in_channels: 3
+    num_class: 32
+    output_class: 7
+nesterov: true
+num_epoch: 80
+num_worker: 4
+optimizer: SGD
+pavi_log: false
+phase: freezing_test
+print_log: true
+save_interval: 10
+save_log: true
+save_result: false
+show_topk:
+- 1
+- 5
+skeleton_test_feeder_args:
+    data_path: ./data/dguha_dataset/dguha_sk_test.npy
+    label_path: ./data/dguha_dataset/dguha_test_label.pkl
+skeleton_train_feeder_args: {}
+start_epoch: 0
+step: []
+test_batch_size: 13
+test_feeder_args:
+    data_path: ./data/dguha_dataset/dguha_pcl_ahc_test.npy
+    label_path: ./data/dguha_dataset/dguha_test_label.pkl
+train_feeder_args: {}
+use_gpu: true
+weight_decay: 0.0001
+weights: /home/aimaster/lab_storage/final_2-stream/MTGEA/saved_best_model/mtgea_model(with_ahc).pt
+work_dir: ./work_dir/tmp
