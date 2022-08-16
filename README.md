@@ -1,10 +1,7 @@
 ## MTGEA
-
-## Acknowledgement
-
-The our framework is extended from the following repositories. We appreciate the authors for releasing the codes.
-- The 2-stream framework of our code is based on [ST-GCN](https://github.com/yysijie/st-gcn/blob/master/OLD_README.md).
-- The attention mechanism is based on [Mega](https://github.com/thecharm/Mega).
+<div align="center">
+    <img src="resource/model.png">
+</div>
 
 ## Prerequisites
 - Python3 (>=3.7)
@@ -45,4 +42,36 @@ python main.py recognition -c config/mtgea/<dataset>/test.yaml --weights <path t
 An example of testing from a pretrained model:
 ```
 python main.py recognition -c config/mtgea/<dataset>/test.yaml --weights '/path/MTGEA/saved_best_model/mtgea_model(with_ahc).pt' --phase 'freezing_test'
+```
+
+## Acknowledgement
+
+The our framework is extended from the following repositories. We appreciate the authors for releasing the codes.
+- The 2-stream framework of our code is based on [ST-GCN](https://github.com/yysijie/st-gcn/blob/master/OLD_README.md).
+```
+@inproceedings{stgcn2018aaai,
+  title     = {Spatial Temporal Graph Convolutional Networks for Skeleton-Based Action Recognition},
+  author    = {Sijie Yan and Yuanjun Xiong and Dahua Lin},
+  booktitle = {AAAI},
+  year      = {2018},
+}
+```
+- The attention mechanism is based on [Mega](https://github.com/thecharm/Mega).
+```
+@inproceedings{zheng2021multimodal,
+  title={Multimodal Relation Extraction with Efficient Graph Alignment},
+  author={Zheng, Changmeng and Feng, Junhao and Fu, Ze and Cai, Yi and Li, Qing and Wang, Tao},
+  booktitle={Proceedings of the 29th ACM International Conference on Multimedia},
+  pages={5298--5306},
+  year={2021}
+}
+
+@inproceedings{zheng2021mnre,
+  title={MNRE: A Challenge Multimodal Dataset for Neural Relation Extraction with Visual Evidence in Social Media Posts},
+  author={Zheng, Changmeng and Wu, Zhiwei and Feng, Junhao and Fu, Ze and Cai, Yi},
+  booktitle={2021 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1--6},
+  year={2021},
+  organization={IEEE}
+}
 ```
